@@ -1,0 +1,22 @@
+{
+  "name": "hangman",
+  "version": "1.0.0",
+  "description": "hangman desktop app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/M4ci3jW/Hangman.git"
+  },
+  "author": "Maciej Wlodarczak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/M4ci3jW/Hangman/issues"
+  },
+  "homepage": "https://github.com/M4ci3jW/Hangman#readme",
+  "dependencies": {
+    "electron": "^4.1.1"
+  }
+}
