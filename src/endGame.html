@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<head>
+    <body>
+        <script type="text/javascript">
+            const electron = require('electron');
+            const {ipcRenderer} = electron;
+
+            const button = document.getElementById('new-start');
+            button.addEventListener('click', function(){
+                ipcRenderer.send('btn:start');
+            });
+        </script>
+        <button id="new-start">restart</button>
+    </body>
+</head>
+</html>

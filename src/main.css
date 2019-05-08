@@ -1,38 +1,42 @@
 body {
-    background: #ffffff;
-}
-.screen{
-    background-image: url("hangman.jpg");
-    background-color: #cccccc;
-    width: 100%;
-    height: auto;
-    background-position: center;
+    background-image: url("res/background.png");
+    background-color: #3f7a28;
+    height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+}
+body#secondBody{
+    background: white;
 }
 
-
-.buttons_menu{
-    margin-top: 50%;
-    margin-left: 50%;
-    transform: translate(-50%,-50%);
+#container{
+    margin-left: 65%;
+    margin-top: 10%;
 }
-.btn_menu{
-    background: #ff0057;
-    margin: 0 auto;
-    border: solid;
-    color: #fff;
+#timer{
     text-align: center;
-    text-transform: uppercase;
-    cursor: pointer;
 }
+#letters-in-word{
+    text-align: center;
+    font-size: 20px;
+}
+#lives-left {
+    text-align: center;
+    font-size: 20px;
+}
+#screens{
+    width: 500px;
+    height: 290px;
+    border: 5px solid black;
+    margin: 0 auto;
+}
+
 
 .keyboard{
     margin: 0 auto;
-    margin-top: 200px;
+    margin-top: 10px;
     max-width: 830px;
-    height: 200px;
+    height: 130px;
     border: #ff0057 solid;
     object-position: center;
 }
@@ -47,14 +51,21 @@ body {
     cursor: pointer;
     text-align: center;
     text-transform: uppercase;
+    text-shadow: #dddddd;
+}
+.guziczki:disabled{
+    border: none;
+    background:#dddddd;
+    cursor: default;
 }
 
+
 #selected-word {
-    margin-top: 200px;
+    margin-top: 30px;
     padding: 10px;
     text-align: center;
     letter-spacing: 0.8em;
-    font-size: 20px;
+    font-size: 40px;
   }
   #result{
       text-align: center;
@@ -62,6 +73,46 @@ body {
       font-size: 50px;
       text-transform: uppercase;
   }
+
+
+
+
+  .btn_menu{
+    margin: 0 auto;
+    border: solid;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 250px;
+    background: #d93470;
+    background-image: -webkit-linear-gradient(top, #d93470, #b8ac2b);
+    background-image: -moz-linear-gradient(top, #d93470, #b8ac2b);
+    background-image: -ms-linear-gradient(top, #d93470, #b8ac2b);
+    background-image: -o-linear-gradient(top, #d93470, #b8ac2b);
+    background-image: linear-gradient(to bottom, #d93470, #b8ac2b);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    text-shadow: 5px 5px 6px #292929;
+    -webkit-box-shadow: 7px 7px 7px #666666;
+    -moz-box-shadow: 7px 7px 7px #666666;
+    box-shadow: 7px 7px 7px #666666;
+    font-family: Courier New;
+    color: #ff9eff;
+    font-size: 30px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+
+.btn_menu:hover{
+    background: #fc3ca9;
+    background-image: -webkit-linear-gradient(top, #fc3ca9, #34d989);
+    background-image: -moz-linear-gradient(top, #fc3ca9, #34d989);
+    background-image: -ms-linear-gradient(top, #fc3ca9, #34d989);
+    background-image: -o-linear-gradient(top, #fc3ca9, #34d989);
+    background-image: linear-gradient(to bottom, #fc3ca9, #34d989);
+    text-decoration: none;
+}
 
 
 

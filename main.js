@@ -9,8 +9,8 @@ let mainWindow;
 app.on('ready', function(){
     //tworzenie okna
     mainWindow = new BrowserWindow({
-        width: 1400,
-        height: 1200
+        width: 1600,
+        height: 800
     });
     //ladowanie html do okna
     mainWindow.loadURL(url.format({
@@ -38,7 +38,18 @@ function createGameWindow(){
         app.quit();
     });
 }
-
+function endgameInfo(){
+    let win = new BrowserWindow({
+        width: 200,
+        height: 250
+    })
+    win.loadURL(url.format({
+        pathname: path.join(__dirname, 'src/endGame.html'),
+        protocol: 'file:',
+        slashes: true
+    }));
+    win.setAlwaysOnTop(true, "floating",1);
+}
 // tworzenie okna info
 function createInfoWindow(){
     mainWindow.loadURL(url.format({
@@ -75,6 +86,11 @@ ipcMain.on('btn:score', function(){
 ipcMain.on('btn:exit', function(){
     app.quit();
 });
+ipcMain.on('btn:lost', function(){
+    endgameInfo();
+});
+    
+
 
 
 
