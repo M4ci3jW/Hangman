@@ -29,11 +29,11 @@ function myButtonClicked(el)
 };
 
 var timer = document.getElementById('timer');
-var min = 0;
-var sec = 0;
-//var start = false;
+var min = "00";
+var sec = "00";
+var start = false;
 function countUp(){
-    var start= false;
+    //var start= false;
     if(!start){
         //start = true;
         if(sec == 59){
@@ -43,7 +43,7 @@ function countUp(){
                 min++;
             }
             if(min < 10) min = "0" + min;
-            sec = 0;
+            sec = "00";
         }
         else {
             sec++ ;
@@ -53,7 +53,7 @@ function countUp(){
         timer.innerHTML = min + ":" + sec;  
     }   
 };
-
+countUp();
 
 function check(val){
     this.letter = val;
@@ -86,10 +86,12 @@ function displayWord(){
 function finish(){
     if(!contains(selectedWord.innerHTML, "_")){
         box.innerHTML = '<img src="res/winscreen.png">';
+        start = true;
     }
     if(lives <= 0){
         box.replaceChild(srcLoss, src6);
         ipcRenderer.send('btn:lost');
+        start = true;
     }
 };
 
@@ -117,7 +119,10 @@ src6.src = "res/screen6.png";
 function loadImage(){
     switch(lives){
         case 6:
-        box.appendChild(src1);
+        if(contains(selectedWord.innerHTML, "_")){
+            box.appendChild(src1);
+        }
+        //box.appendChild(src1);
         break;
         case 5:
         box.replaceChild(src2, src1);
@@ -141,7 +146,6 @@ function render(){
     getWord();
     displayWord();
     updateLives();
-    //countUp();
 };
 
 
