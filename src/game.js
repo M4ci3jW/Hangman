@@ -27,10 +27,11 @@ function myButtonClicked(el)
 {
     el.disabled = true; 
 };
+
 var timer = document.getElementById('timer');
 var min = 0;
 var sec = 0;
-var start = false;
+//var start = false;
 function countUp(){
     var start= false;
     if(!start){
@@ -67,6 +68,7 @@ function check(val){
         displayWord();
     }
     finish();
+
 };
 
 function displayWord(){
@@ -86,7 +88,7 @@ function finish(){
         box.innerHTML = '<img src="res/winscreen.png">';
     }
     if(lives <= 0){
-        box.innerHTML = '<img src="res/lostscreen.png">';
+        box.replaceChild(srcLoss, src6);
         ipcRenderer.send('btn:lost');
     }
 };
@@ -96,6 +98,10 @@ function updateLives(){
 };
 
 var box = document.getElementById("screens");
+var srcWin = document.createElement("img");
+srcWin.src = "res/winscreen.png";
+var srcLoss = document.createElement("img");
+srcLoss.src = "res/lostscreen.png";
 var src1 = document.createElement("img");
 src1.src = "res/screen1.png";
 var src2 = document.createElement("img");
@@ -135,9 +141,7 @@ function render(){
     getWord();
     displayWord();
     updateLives();
+    //countUp();
 };
-
-var gameInfoWindow = new Browser
-
 
 
