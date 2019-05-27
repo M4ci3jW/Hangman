@@ -9,7 +9,6 @@
     <div class="game_screen">
       <div id="timer">00:00</div>
       <div id="lives-left">Lives left: </div>
-      <div id="letters-in-word"></div>
       <div id="selected-word"></div>
       <div></div>
       <div id="screens"></div>
@@ -41,7 +40,10 @@
         <button class="guziczki" value="y" onclick="check(this.value); myButtonClicked(this); loadImage()">Y</button>
         <button class="guziczki" value="z" onclick="check(this.value); myButtonClicked(this); loadImage()">Z</button> 
       </div>
-      <div></div>
+      <div>
+        <button id="back-button" class="navigatebtns">BACK</button>
+        <button id="restart-button" class="navigatebtns">RESTART</button>
+      </div>
       </div>
     </div>
     

@@ -1,12 +1,29 @@
 body {
-    background-image: url("res/background.png");
-    background-color: #3f7a28;
+    background-image: url("res/background1.png");
+    
     height: 100%;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover cover;
 }
 body#secondBody{
-    background: white;
+    
+    background-image: url("res/background1.png");
+}
+
+#back-button{
+    position: absolute;
+    top: 30px;
+    right: 50px;
+}
+#restart-button{
+    position: absolute;
+    top: 30px;
+    left: 50px;
+}
+#clear{
+    position: absolute;
+    top: 30px;
+    left: 50px;
 }
 
 #container{
@@ -15,29 +32,39 @@ body#secondBody{
 }
 #timer{
     text-align: center;
+    font-size: 20px
 }
-#letters-in-word{
-    text-align: center;
-    font-size: 20px;
-}
+
 #lives-left {
+    margin-top: 20px;
     text-align: center;
-    font-size: 20px;
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#selected-word {
+    margin-top: 50px;
+    padding: 10px;
+    text-align: center;
+    letter-spacing: 0.8em;
+    font-size: 50px;
+    font-family: cursive;
+    font-style: italic;
+    text-transform: uppercase;
+    color:red;
 }
 #screens{
     width: 500px;
     height: 290px;
-    border: 5px solid black;
+
     margin: 0 auto;
 }
 
 
 .keyboard{
     margin: 0 auto;
-    margin-top: 10px;
+    margin-top: 50px;
     max-width: 830px;
     height: 130px;
-    border: #ff0057 solid;
     object-position: center;
 }
 .guziczki{
@@ -58,24 +85,44 @@ body#secondBody{
     background:#dddddd;
     cursor: default;
 }
+.recordPage{
+    width: 100%;
+    height: 100%;
+    
+}
 
-
-#selected-word {
-    margin-top: 30px;
-    padding: 10px;
+tr{
     text-align: center;
-    letter-spacing: 0.8em;
-    font-size: 40px;
-  }
-  #result{
-      text-align: center;
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-      font-size: 50px;
-      text-transform: uppercase;
-  }
-
-
-
+}
+th{
+    text-align: center;
+    border: #292929 solid;
+    width: 250px;
+    font-size: 25px;
+    font-style: italic;
+    color: red;
+    text-transform: uppercase;
+}
+#scoreTable{
+    overflow-y: scroll;
+    height: 300px;
+    display: block;
+    position: absolute;
+    width: 1197px;    
+}
+#scoreTable td{
+    text-align: center;
+    width: 392px;
+    color: #942894;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+table{
+    position: absolute;
+    width:75%; 
+    top: 275px;
+    left: 200px;
+}
 
   .btn_menu{
     margin: 0 auto;
@@ -103,7 +150,9 @@ body#secondBody{
     padding: 10px 20px 10px 20px;
     text-decoration: none;
 }
-
+button{
+    outline: none;
+}
 .btn_menu:hover{
     background: #fc3ca9;
     background-image: -webkit-linear-gradient(top, #fc3ca9, #34d989);
@@ -113,6 +162,39 @@ body#secondBody{
     background-image: linear-gradient(to bottom, #fc3ca9, #34d989);
     text-decoration: none;
 }
+.navigatebtns {
+    background: #3498db;
+    background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+    background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+    background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+    background-image: -o-linear-gradient(top, #3498db, #2980b9);
+    background-image: linear-gradient(to bottom, #3498db, #2980b9);
+    -webkit-border-radius: 26;
+    -moz-border-radius: 26;
+    border-radius: 26px;
+    text-shadow: 3px 3px 8px #666666;
+    -webkit-box-shadow: 3px 3px 8px #942894;
+    -moz-box-shadow: 3px 3px 8px #942894;
+    box-shadow: 3px 3px 8px #942894;
+    font-family: Courier New;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    border: solid #1f628d 2px;
+    text-decoration: none;
+  }
+  
+  .navigatebtns:hover {
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+  }
+
+
 
 
 

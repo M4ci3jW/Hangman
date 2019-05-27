@@ -53,7 +53,7 @@ function endgameInfo(){
 // tworzenie okna info
 function createInfoWindow(){
     mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'src/infoWindow.html'),
+        pathname: path.join(__dirname, 'src/gameInfo.html'),
         protocol: 'file:',
         slashes: true
     }));
@@ -89,6 +89,13 @@ ipcMain.on('btn:exit', function(){
 ipcMain.on('btn:lost', function(){
     endgameInfo();
 });
+ipcMain.on('btn:back', function(){
+    mainWindow.loadURL(url.format({
+        pathname: path.join(__dirname, 'src/index.html'),
+        protocol: 'file:',
+        slashes: true
+    }));
+})
     
 
 

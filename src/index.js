@@ -11,9 +11,11 @@ const exitBTN = document.getElementById('exit');
 startBTN.addEventListener('click', function () {
     ipcRenderer.send('btn:start');
 });
+/*
 infoBTN.addEventListener('click', function () {
     ipcRenderer.send('btn:info');
 });
+*/
 scoreBTN.addEventListener('click', function () {
     ipcRenderer.send('btn:score');
 });

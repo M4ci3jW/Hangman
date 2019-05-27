@@ -9,7 +9,9 @@ var wordsArray = JSON.parse(data);
 var letter_buttons = [];
 var word;
 var lives = 7;
+
 var letter = null;
+
 
 render();
 
@@ -25,7 +27,10 @@ function getWord(){
 };
 function myButtonClicked(el)
 {
-    el.disabled = true; 
+    el.disabled = true;
+    if(lives <= 0){
+        el.disabled = true;
+    } 
 };
 
 var timer = document.getElementById('timer');
@@ -54,21 +59,24 @@ function countUp(){
     }   
 };
 countUp();
-
-function check(val){
+var liveBool = true;
+function check(val, el){
     this.letter = val;
     
     if(!contains(word, letter)){
-        lives -= 1;
+        if(liveBool){
+            lives -= 1;
+        }
         updateLives();
         letter_buttons.push(letter);     
     }
     else{
-        letter_buttons.push(letter);
-        displayWord();
+        if(liveBool){
+            letter_buttons.push(letter);
+            displayWord();
+        }
     }
     finish();
-
 };
 
 function displayWord(){
@@ -80,18 +88,30 @@ function displayWord(){
         else{
             selectedWord.innerHTML += "_";
         }
+
     }
 };
 
 function finish(){
     if(!contains(selectedWord.innerHTML, "_")){
-        box.innerHTML = '<img src="res/winscreen.png">';
+        if(liveBool){
+            box.innerHTML = '<img src="res/winscreen.png">';
+            //liveBool = false;
+        }
         start = true;
+        
+        addRecord(word, lives, timer.textContent);
+        
     }
     if(lives <= 0){
         box.replaceChild(srcLoss, src6);
-        ipcRenderer.send('btn:lost');
-        start = true;
+        //ipcRenderer.send('btn:lost');
+        start = true; 
+        liveBool = false;
+        selectedWord.innerHTML = "" 
+        for(var i = 0; i < word.length; i++){
+            selectedWord.innerHTML += word[i];
+        }
     }
 };
 
@@ -105,7 +125,7 @@ srcWin.src = "res/winscreen.png";
 var srcLoss = document.createElement("img");
 srcLoss.src = "res/lostscreen.png";
 var src1 = document.createElement("img");
-src1.src = "res/screen1.png";
+src1.src = "res/n.png";
 var src2 = document.createElement("img");
 src2.src = "res/screen2.png";
 var src3 = document.createElement("img");
@@ -142,10 +162,24 @@ function loadImage(){
     }
 }
 
+function addRecord(fword, flives, ftime){
+    let scoreFile = fs.readFileSync('src/dataScore.json','utf8');
+    let arrayScore = JSON.parse(scoreFile);
+    arrayScore.push({"word": fword, "lives": flives, "time": ftime});
+    fs.writeFileSync('src/dataScore.json', JSON.stringify(arrayScore), 'utf8');
+};
+
 function render(){
     getWord();
     displayWord();
     updateLives();
+    //addRecord();
 };
-
-
+const back = document.getElementById('back-button');
+back.addEventListener('click', () => {
+    ipcRenderer.send('btn:back');
+});
+const restart = document.getElementById('restart-button');
+restart.addEventListener('click', () => {
+    ipcRenderer.send('btn:start');
+});
