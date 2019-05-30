@@ -1,2 +1,6 @@
 # Hangman
-aplilacja implementująca popularną grę Wisielec, przy użyciu Nodejs oraz javascript
+simple Hangman game made using Electron
+
+to launch just type in your terminal:
+npm install
+npm start
