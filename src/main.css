@@ -91,40 +91,59 @@ body#secondBody{
     
 }
 
+div.tableContainer {
+    position: absolute;
+    top: 275px;
+    left: 350px;
+	clear: both;
+	border: 3px solid #963;
+	height: 285px;
+	overflow: auto;
+	width: 900px
+}
 tr{
-    text-align: center;
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+    border: #292929 solid !important;
+}
+table{
+
+    border-spacing: 2px;
+    
+}
+thead{
+
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+    display: fixed;
+    border: #292929 solid !important;
+}
+tbody td{
+    text-align: center;   
+
+}
+tbody{
+    /* overflow-y: scroll; */
+    display: block;
+    width: 100% !important;
+    display: table-footer-group;
+    overflow-y: scroll;
 }
 th{
     text-align: center;
-    border: #292929 solid;
-    width: 250px;
+    border: #292929 solid !important;
+}
+td{
+    text-align: center;
     font-size: 25px;
     font-style: italic;
-    color: red;
-    text-transform: uppercase;
-}
-#scoreTable{
-    overflow-y: scroll;
-    height: 300px;
-    display: block;
-    position: absolute;
-    width: 1197px;    
-}
-#scoreTable td{
-    text-align: center;
-    width: 392px;
-    color: #942894;
-    text-transform: uppercase;
-    font-size: 20px;
-}
-table{
-    position: absolute;
-    width:75%; 
-    top: 275px;
-    left: 200px;
 }
 
-  .btn_menu{
+
+
+.btn_menu{
     margin: 0 auto;
     border: solid;
     text-align: center;

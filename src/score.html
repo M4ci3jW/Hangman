@@ -6,23 +6,27 @@
         <link rel="stylesheet" href="main.css">
     </head>
     <body id="secondBody">
-        <div class="content">
-
-            <button id="clear" class="navigatebtns" onclick="clear()">CLEAR</button>
-            <button id="back-button" class="navigatebtns">BACK</button>
-            <div class="recordPage">
-                <table id="table1">
-                    <thead>
-                        <tr>
-                            <th id="th1">Word</th>
-                            <th id="th2">Lives left</th>                               
-                            <th id="th3">Time</th>
-                        </tr>
-                    </thead>
-                    <tbody id="scoreTable">            
-                    </tbody>
-                </table>  
-            </div>
+        <button id="clear" class="navigatebtns">CLEAR</button>
+        <button id="back-button" class="navigatebtns">BACK</button>
+        <div id="tableContainer" class="tableContainer">
+                <table cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
+                    
+                <thead class="fixedHeader">
+                    <tr>
+                        <th width="33%">WORD</th>
+                        <th width="33%">LIVES LEFT</th>
+                        <th width="34%">TIME</th>
+                    </tr>
+                </thead>
+                <tbody id="scoreTable">
+                    <tr>
+                        <td width="33%">a</td>
+                        <td width="33%">b</td>
+                        <td width="32%">c</td>
+                    </tr>
+                
+                </tbody>
+                </table>
         </div>
         <script src="score.js"></script>
     </body>

@@ -183,3 +183,4 @@ const restart = document.getElementById('restart-button');
 restart.addEventListener('click', () => {
     ipcRenderer.send('btn:start');
 });
+

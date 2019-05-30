@@ -5,6 +5,7 @@ let fs = require('fs');
 let scoreFile = fs.readFileSync('src/dataScore.json', 'utf8');
 let array = JSON.parse(scoreFile);
 const back = document.getElementById('back-button');
+const clearbtn = document.getElementById('clear');
 
 update();
 function update(){
@@ -23,7 +24,9 @@ function clear(){
     fs.writeFileSync('src/dataScore.json', JSON.stringify(array), 'utf8');
     update();
 }
-
+clearbtn.addEventListener('click', () => {
+    clear();
+});
 back.addEventListener('click', () => {
     ipcRenderer.send('btn:back');
 });

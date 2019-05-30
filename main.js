@@ -12,6 +12,7 @@ app.on('ready', function(){
         width: 1600,
         height: 800
     });
+    mainWindow.setMenuBarVisibility(false);
     //ladowanie html do okna
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'src/index.html'),
@@ -23,8 +24,8 @@ app.on('ready', function(){
         app.quit();
     });
 
-    const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
-    Menu.setApplicationMenu(mainMenu);
+    //const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
+    //Menu.setApplicationMenu(mainMenu);
 });
 
 
@@ -100,44 +101,3 @@ ipcMain.on('btn:back', function(){
 
 
 
-
-//menu
-const mainMenuTemplate = [
-    {
-        label: 'Options',
-        submenu:[
-            {
-                label: 'Quit',
-                accelerator: 'Ctrl+Q',
-                click(){
-                    app.quit();
-                }
-            },
-            {
-                label: 'Info',
-                click(){
-                    createInfoWindow();
-                }
-            }
-        ]
-    }
-]
-
-
-
-if(process.env.NODE_ENV !== 'production'){
-    mainMenuTemplate.push({
-        label: 'Developer Tools',
-        submenu:[
-            {
-                label: 'Toggle DevTools',
-                click(item, focusedWindow){
-                    focusedWindow.toggleDevTools();
-                }
-            },
-            {
-                role: 'reload'
-            }
-        ]
-    });
-}
