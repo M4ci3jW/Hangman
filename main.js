@@ -19,16 +19,10 @@ app.on('ready', function(){
         protocol: 'file:',
         slashes: true
     }));
-
     mainWindow.on('closed', function(){
         app.quit();
     });
-
-    //const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
-    //Menu.setApplicationMenu(mainMenu);
 });
-
-
 function createGameWindow(){
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'src/game.html'),
