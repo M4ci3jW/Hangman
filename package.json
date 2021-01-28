@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/M4ci3jW/Hangman#readme",
   "dependencies": {
-    "electron": "^4.1.1"
+    "electron": "^9.4.0"
   }
 }
